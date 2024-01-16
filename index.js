@@ -1,39 +1,61 @@
-// const text = 'hello console'
-// console.log("🚀 ~ text:", text)
 
-const startBtn = document.querySelector(".btnStart");
+// дата відкриття
+const openingDate = new Date('2024-10-12 10:00:00');
+// const dateNow = Date.now()
+// const openingDateMs = openingDate.getTime();
+
+// реф
 const stopBtn = document.querySelector(".btnStop");
-const hoursValue = document.querySelector(".hours");
-const minutesValue = document.querySelector(".minutes");
-const secondsValue = document.querySelector(".seconds");
-const list = document.querySelector(".list");
+const dayValueEl = document.querySelector('[data-days]');
+const hoursValueEl = document.querySelector('[data-hours]');
+const minValueEl = document.querySelector('[data-minutes]');
+const secValueEl = document.querySelector('[data-seconds]');
+
 let timerId = null;
 
-const getTime = () => {
-  const time = new Date();
-  let hoursValueNow = time.getHours();
-  let minutesValueNow = time.getMinutes();
-  let secondsValueNow = time.getSeconds();
-  console.log(
-    `timeNow: ${hoursValueNow}:${minutesValueNow}:${secondsValueNow}`
-  );
-
-  hoursValue.innerHTML = hoursValueNow;
-  minutesValue.innerHTML = minutesValueNow;
-  secondsValue.innerHTML = secondsValueNow;
-};
-
-const onStartBtnClick = () => {
-  console.log("click on start");
+// функція підрухунку часу до відкриття
+function timer () {
   timerId = setInterval(() => {
-    getTime();
+    if (openingDate.getTime() >= Date.now()) {
+      const timerIndicator = openingDate.getTime() - Date.now();
+      const { days, hours, minutes, seconds } = convertMs(timerIndicator);
+      // console.log('~ Time for end', `${days}:${hours}:${minutes}:${seconds}`);
+      
+      dayValueEl.textContent = days;
+      hoursValueEl.textContent = hours;
+      minValueEl.textContent = minutes;
+      secValueEl.textContent = seconds;
+    } else {
+      alert("Застаріла дата відриття")
+    }
   }, 1000);
-};
+}
 
-const onStopBtnClock = () => {
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
+
+function convertMs(ms) {
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const days = addLeadingZero(Math.floor(ms / day));
+  const hours = addLeadingZero(Math.floor((ms % day) / hour));
+  const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
+  const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
+
+  return { days, hours, minutes, seconds };
+}
+
+// зупинка таймеру
+function onStopBtnClick () {
   console.log("stop");
   clearInterval(timerId);
 };
 
-startBtn.addEventListener("click", onStartBtnClick);
-stopBtn.addEventListener("click", onStopBtnClock);
+stopBtn.addEventListener("click", onStopBtnClick);
+timer()
+
+
+
