@@ -26,7 +26,7 @@ function timer () {
       minValueEl.textContent = minutes;
       secValueEl.textContent = seconds;
     } else {
-      alert("Застаріла дата відриття")
+      alert("The opening date has already passed!")
     }
   }, 1000);
 }
