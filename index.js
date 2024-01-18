@@ -1,11 +1,9 @@
 
 // дата відкриття
 const openingDate = new Date('2024-10-12 10:00:00');
-// const dateNow = Date.now()
-// const openingDateMs = openingDate.getTime();
 
 // реф
-const stopBtn = document.querySelector(".btnStop");
+// const stopBtn = document.querySelector(".btnStop");
 const dayValueEl = document.querySelector('[data-days]');
 const hoursValueEl = document.querySelector('[data-hours]');
 const minValueEl = document.querySelector('[data-minutes]');
@@ -54,7 +52,7 @@ function onStopBtnClick () {
   clearInterval(timerId);
 };
 
-stopBtn.addEventListener("click", onStopBtnClick);
+// stopBtn.addEventListener("click", onStopBtnClick);
 timer()
 
 
