@@ -4,10 +4,10 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  /*   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
   /*   background-color: #fafafa;
   color: #212121; */
   line-height: 1.5;
@@ -20,24 +20,42 @@ body {
 }
 
 .container {
-  position: relarive;
+  /*   position: relarive; */
 }
 
 .ellipse {
-  border: 1px red solid;
-  width: 754px;
-  height: 769px;
+  /*   border: 1px red solid; */
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: linear-gradient(
-    157deg,
-    rgba(148, 38, 186, 0) 41.63%,
-    #9426ba 79.18%
-  );
-  
+}
+
+.first {
   position: absolute;
-  top: -179px;
-  left: -203px;
-  
+  top: -200px;
+  left: -220px;
+  z-index: -1;
+
+  background: linear-gradient(
+    143deg,
+    rgba(46, 32, 142, 1) 39%,
+    rgba(148, 38, 186, 1) 93%,
+    rgba(148, 38, 186, 1) 100%
+  );
+}
+
+.second {
+  position: absolute;
+  top: 300px;
+  right: -100px;
+  z-index: -2;
+
+  background: linear-gradient(
+    340deg,
+    rgba(46, 32, 142, 1) 24%,
+    rgba(148, 38, 186, 1) 60%,
+    rgba(223,64,169,1) 100%
+  );
 }
 
 h1 {
@@ -70,9 +88,10 @@ h1 {
 }
 
 .value {
+      padding: 10px;
   border-radius: 5px;
   border: 0.5px solid #ffffff;
-  /*   opacity: 0.5; */
+    opacity: 0.9;
   background: linear-gradient(
     180deg,
     #b39ccc 0%,
