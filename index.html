@@ -13,45 +13,61 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-<!--     <button class="btnStop" type="submit">stop</button> -->
-    <div class="ellipse first"></div>
-    <div class="ellipse second"></div>
-    
+    <!--     <button class="btnStop" type="submit">stop</button> -->
+    <!--     <div class="ellipse first"></div> -->
+    <!--     <div class="ellipse second"></div> -->
+
     <div class="container">
       <h1>Launching Soon</h1>
 
-    <div class="timer">
-      <div class="field">
-        <span class="value" data-days>000</span>
-        <span class="label">Days</span>
+      <div class="timer">
+        <div class="field">
+          <div class="time">
+            <span class="value" data-days-fst>0</span>
+            <span class="value" data-days-snd>0</span>
+          </div>
+          <span class="label">Days</span>
+        </div>
+        <div class="field">
+          <div class="time">
+            <span class="value" data-hours-fst>0</span>
+            <span class="value" data-hours-snd>0</span>
+          </div>
+          <span class="label">Hours</span>
+        </div>
+        <div class="field">
+          <div class="time">
+            <span class="value" data-minutes-fst>0</span>
+            <span class="value" data-minutes-snd>0</span>
+          </div>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="field">
+          <div class="time">
+            <span class="value" data-seconds-fst>0</span>
+            <span class="value" data-seconds-snd>0</span>
+          </div>
+          <span class="label">Seconds</span>
+        </div>
       </div>
-      <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
-      </div>
-      <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
-      </div>
-      <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+
+      <div class="notify">
+        <h2>We’ll let you know when we are Launching</h2>
+
+        <form>
+          <label>
+            <input
+              class="email"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+            />
+          </label>
+          <button class="btnNotify" type="submite">Notify Me</button>
+        </form>
       </div>
     </div>
 
-    <div class="notify">
-      <h2>We’ll let you know when we are Launching</h2>
-
-      <form>
-        <label>
-          <input class="email" type="email" name="email" placeholder="Email Address" />
-        </label>
-        <button class="btnNotify" type="submite">Notify Me</button>
-      </form>
-    </div>
-
-    </div>
-    
     <script src="index.js" type="module"></script>
   </body>
 </html>
